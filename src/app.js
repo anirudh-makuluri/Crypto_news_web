@@ -5,6 +5,8 @@ const request=require('request')
 const jsdom=require('jsdom')
 const { json } = require('express')
 
+
+const port=process.env.PORT||3030
 const app= express()
 const viewspath=path.join(__dirname,'../templates/views')
 const partialspath=path.join(__dirname,'../templates/partials')
@@ -86,8 +88,8 @@ app.get('/demo',(req,res)=>{
 })
 
 
-app.listen(3030,()=>{
-    console.log('server running on port:3030')
+app.listen(port,()=>{
+    console.log('server running on port:'+port)
 })
 
 function numberWithCommas(x) {
