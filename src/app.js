@@ -57,7 +57,13 @@ app.get('/cur',(req,res)=>{
 })
 
 app.get('/news',(req,res)=>{
-const url='https://newsapi.org/v2/everything?q=cryptocurrency&sortBy=publishedAt&apiKey=d4b039e2469c4de6907dc546dee204c6'
+    var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = yyyy + '-' + mm + '-' + dd;
+console.log(today);
+const url='https://newsapi.org/v2/everything?q=cryptocurrency&from='+today+'&apiKey=d4b039e2469c4de6907dc546dee204c6'
 request({url,json:true},(error,{body}=response)=>{
     res.send(body)
 
