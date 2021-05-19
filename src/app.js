@@ -57,7 +57,7 @@ app.get('/cur',(req,res)=>{
 })
 
 app.get('/news',(req,res)=>{
-const url='https://newsapi.org/v2/everything?q=cryptocurrency&from=2021-04-17&sortBy=publishedAt&apiKey=d4b039e2469c4de6907dc546dee204c6'
+const url='https://newsapi.org/v2/everything?q=cryptocurrency&sortBy=publishedAt&apiKey=d4b039e2469c4de6907dc546dee204c6'
 request({url,json:true},(error,{body}=response)=>{
     res.send(body)
 
